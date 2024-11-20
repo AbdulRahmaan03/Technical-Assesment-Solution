@@ -19,7 +19,7 @@ def display_metric(label, value):
 # Page configuration
 st.set_page_config(
     page_title="BGP Routing Analysis",
-    page_icon="resources\favicon.jpeg",
+    page_icon="resources/favicon.jpeg",
     initial_sidebar_state="expanded"
 )
 
@@ -163,7 +163,7 @@ elif st.session_state.page == "Exploratory Data Analysis":
                 height=415
             )
             st.subheader("Proportion of IPV4 vs IPV6 Prefixes")
-            st.image(r'resources\Count of IPv4 and IPv6 Prefixes.png')
+            st.image('resources/Count of IPv4 and IPv6 Prefixes.png')
         with col2:
             st.markdown('- A sample of the raw data parsed to **MySQL** Database')
             st.write('\n');st.write('\n');st.write('\n');st.write('\n');st.write('\n');st.write('\n')
@@ -174,7 +174,7 @@ elif st.session_state.page == "Exploratory Data Analysis":
     
     with tab2:
         st.subheader("Hop Analysis")
-        hops_table = pd.read_csv(r'resources\bgp_analysis_1.csv')
+        hops_table = pd.read_csv('resources/bgp_analysis_1.csv')
         st.dataframe(
             hops_table.style.background_gradient(cmap='Blues'),
             use_container_width=True,
@@ -191,10 +191,10 @@ elif st.session_state.page == "Exploratory Data Analysis":
         col1.subheader("Further Analysis")
         col2.subheader('Insights')
         with col1:
-            st.image(r'resources\Proportion of Transit and Non-Transit Prefixes.png')
-            st.image(r'resources\Count of Prefix vs Number of Hops.png')
+            st.image('resources/Proportion of Transit and Non-Transit Prefixes.png')
+            st.image('resources/Count of Prefix vs Number of Hops.png')
             st.markdown("")
-            st.image('resources\Count of IP Prefixes by IP Class.png')
+            st.image('resources/Count of IP Prefixes by IP Class.png')
 
         with col2:
             st.markdown('- Proportion of Non-Transit Prefix compared to Transit Prefix varies a lot')
@@ -221,7 +221,7 @@ elif st.session_state.page == "Anomaly Identification":
         col2.subheader('Insights')
         with col1:
             st.dataframe(
-                data=pd.read_csv(r'resources\bgp_comparative_analysis.csv'),
+                data=pd.read_csv('resources/bgp_comparative_analysis.csv'),
                 use_container_width=False,
                 hide_index=True,
                 height=780
@@ -236,8 +236,8 @@ elif st.session_state.page == "Anomaly Identification":
         col1.subheader("Anomaly Score Analysis")
         col2.subheader('Insights')
         with col1:
-            st.image(r'resources\Anomaly Score vs. Number of Hops for Transit Prefixes.png')
-            st.image(r'resources\Anomaly Score vs. Number of Hops for Non-Transit Prefixes.png')
+            st.image('resources/Anomaly Score vs. Number of Hops for Transit Prefixes.png')
+            st.image('resources/Anomaly Score vs. Number of Hops for Non-Transit Prefixes.png')
         with col2:
             st.markdown('- Few Aanomalies in both yransit and non-transit have very high number of hops')
             st.markdown('- Both transit and non-transit scatter plots look **95%** similar indicating that the distribution of data across both type of prefixes is approximately the same')
@@ -248,10 +248,10 @@ elif st.session_state.page == "Anomaly Identification":
         col1.subheader("Proportion of Anomalies")
         col2.subheader('Insights')
         with col1:
-            st.image(r'resources\Number_of_Anomalies_Detected_in_Transit_vs_Non_Transit_Prefixes.png')
+            st.image('resources/Number_of_Anomalies_Detected_in_Transit_vs_Non_Transit_Prefixes.png')
             st.subheader('Feature Importance of No.of Hops')
             st.dataframe(
-                data=pd.read_csv('resources\high_hop_anomalies.csv'),
+                data=pd.read_csv('resources/high_hop_anomalies.csv'),
                 use_container_width=False,
                 hide_index=True,
                 height=150
@@ -275,8 +275,8 @@ elif st.session_state.page == "Advanced Analysis":
         col1.subheader("Feature Visualisation")
         col2.subheader('Insights')
         with col1:
-            st.image(r"resources\Prefixes_with_Duplicate_ASNs (Transit).png")
-            st.image(r"resources\Prefixes_with_Duplicate_ASNs (Non-Transit).png")
+            st.image("resources/Prefixes_with_Duplicate_ASNs (Transit).png")
+            st.image("resources/Prefixes_with_Duplicate_ASNs (Non-Transit).png")
         with col2:
             st.markdown('- It can be observed that around 13 \% of the Transit Prefix and 18 \% of the Non-Transit Prefix have duplicate ASNs in their paths, and its effect on identifying the anomalies can be subject to domain knowledge as these duplicates might be added by the hosts on purpose to influence the transmition of data by other networks or they can be a feature to identify anomalies.')
             
@@ -286,8 +286,8 @@ elif st.session_state.page == "Advanced Analysis":
         col1.subheader("Feature Visualisation")
         col2.subheader('Insights')
         with col1:
-            st.image(r"resources\Distribution of Metric Values (Transit).png")
-            st.image(r"resources\Distribution of Metric Values (Non-Transit).png")
+            st.image("resources/Distribution of Metric Values (Transit).png")
+            st.image("resources/Distribution of Metric Values (Non-Transit).png")
         with col2:
             st.markdown('- The distribution of Metric Values for Transit Prefixes varies a lot with a good amount having unexpectedly high value.')
             st.markdown('- In the case of Non-Transit, the metric values are mostly 0 with a few having high value.')
