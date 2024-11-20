@@ -157,7 +157,7 @@ elif st.session_state.page == "Exploratory Data Analysis":
         col2.subheader('Insights')
         with col1:
             st.dataframe(
-                data=pd.read_csv(r'resources\bgp_data_sample.csv'),
+                data=pd.read_csv('resources/bgp_data_sample.csv'),
                 use_container_width=False,
                 hide_index=True,
                 height=415
