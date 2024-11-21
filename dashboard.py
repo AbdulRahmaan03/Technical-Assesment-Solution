@@ -156,12 +156,12 @@ elif st.session_state.page == "Exploratory Data Analysis":
         col1.subheader("Quick Statistics")
         col2.subheader('Insights')
         with col1:
-            st.dataframe(
-                data=pd.read_csv('resources/bgp_data_sample.csv'),
-                use_container_width=False,
-                hide_index=True,
-                height=415
-            )
+            # st.dataframe(
+            #     data=pd.read_csv('resources/bgp_data_sample.csv'),
+            #     use_container_width=False,
+            #     hide_index=True,
+            #     height=415
+            # )
             st.subheader("Proportion of IPV4 vs IPV6 Prefixes")
             st.image('resources/Count of IPv4 and IPv6 Prefixes.png')
         with col2:
@@ -175,12 +175,12 @@ elif st.session_state.page == "Exploratory Data Analysis":
     with tab2:
         st.subheader("Hop Analysis")
         hops_table = pd.read_csv('resources/bgp_analysis_1.csv')
-        st.dataframe(
-            hops_table.style.background_gradient(cmap='Blues'),
-            use_container_width=True,
-            hide_index=True,
-            height=1000
-        )
+        # st.dataframe(
+        #     hops_table.style.background_gradient(cmap='Blues'),
+        #     use_container_width=True,
+        #     hide_index=True,
+        #     height=1000
+        # )
         st.subheader('Insights')
         st.markdown('- Few Prefix do not have any associated ASN, indicating that the route has not passed any intermediate ASNs')
         st.markdown('- Majority of the Prefixes have number of hops in the range of **1-4**')
@@ -220,12 +220,13 @@ elif st.session_state.page == "Anomaly Identification":
         col1.subheader("Quick Statistics")
         col2.subheader('Insights')
         with col1:
-            st.dataframe(
-                data=pd.read_csv('resources/bgp_comparative_analysis.csv'),
-                use_container_width=False,
-                hide_index=True,
-                height=780
-            )
+            st.write()
+            # st.dataframe(
+            #     data=pd.read_csv('resources/bgp_comparative_analysis.csv'),
+            #     use_container_width=False,
+            #     hide_index=True,
+            #     height=780
+            # )
         with col2:
             st.markdown('- A sample of the evaluated data by training **Isolation Forest ALgorithm**')
             st.markdown('- **Anomaly_Score** indicates the score of anomality predicted by the model (Close to 0 indicates normal Prefixes and Negative score suggest anomalies)')
@@ -250,12 +251,12 @@ elif st.session_state.page == "Anomaly Identification":
         with col1:
             st.image('resources/Number_of_Anomalies_Detected_in_Transit_vs_Non_Transit_Prefixes.png')
             st.subheader('Feature Importance of No.of Hops')
-            st.dataframe(
-                data=pd.read_csv('resources/high_hop_anomalies.csv'),
-                use_container_width=False,
-                hide_index=True,
-                height=150
-            )
+            # st.dataframe(
+            #     data=pd.read_csv('resources/high_hop_anomalies.csv'),
+            #     use_container_width=False,
+            #     hide_index=True,
+            #     height=150
+            # )
 
         with col2:
             st.markdown('- The proportion of Anomalies in Transit is **14%** compared to Non-Transit with **38%**')
