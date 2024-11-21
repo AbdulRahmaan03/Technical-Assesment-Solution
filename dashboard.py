@@ -174,7 +174,7 @@ elif st.session_state.page == "Exploratory Data Analysis":
     
     with tab2:
         st.subheader("Hop Analysis")
-        hops_table = pd.read_csv('resources/bgp_analysis_1.csv')
+        # hops_table = pd.read_csv('resources/bgp_analysis_1.csv')
         # st.dataframe(
         #     hops_table.style.background_gradient(cmap='Blues'),
         #     use_container_width=True,
